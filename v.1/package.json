@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "sass scss/dashboard.scss:css/dashboard.css css",
-    "dev": "sass --watch scss:css"
+    "dev": "sass --watch scss:css",
+    "deploy": "aws s3 sync . s3://gocd-trial-exp-prototypes/v.1/ --exclude 'scss/*' --exclude 'css/*.map' --exclude 'node_modules/*' --exclude 'package*.json' --acl public-read --cache-control 'no-store'"
   },
   "author": "Marques Lee <marques.lee@thoughtworks.com>",
   "license": "Apache-2.0",
