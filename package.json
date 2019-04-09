@@ -4,7 +4,7 @@
   "description": "GoCD Trial Experience Prototyping",
   "main": "index.js",
   "scripts": {
-    "update": "aws s3 cp index.html s3://gocd-trial-exp-prototypes/ --acl public-read --cache-control 'no-store'"
+    "update": "aws s3 cp index.html s3://proto.gocd.org/ --acl public-read --cache-control 'no-store'"
   },
   "repository": {
     "type": "git",
