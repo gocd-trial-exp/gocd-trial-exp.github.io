@@ -4,7 +4,7 @@
   <title>GoCD Pipelines Dashboard</title>
   <link rel="stylesheet" type="text/css" href="css/dashboard.css">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crel/4.0.1/crel.min.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+  <script defer src="js/font-awesome-5.8.1.min.js"></script>
   <script defer src="js/dashboard.js"></script>
 </head>
 <body>
@@ -34,7 +34,7 @@
         </select>
       </div>
 
-      <div class="pipeline-group">
+      <div class="pipeline-group start-with-empty" id="my-pipelines">
         <header class="group-name">
           <a href="#stub">my-pipelines</a> <a href="#stub" class="edit-group"><i class="fas fa-cog"></i></a>
           <a href="#stub" class="add-pipeline"><i class="fas fa-plus"></i> New Pipeline</a>
@@ -59,8 +59,6 @@
               <p class="triggered-by">Triggered by changes <br/> on 14 Mar, 2019 at 22:12:21 Local Time</p>
               <ul class="stages">
                 <li class="stage success"><i class="fas fa-check"></i></li>
-                <li class="stage success"><i class="fas fa-check"></i></li>
-                <li class="stage success"><i class="fas fa-check"></i></li>
               </ul>
             </section>
           </div>
@@ -68,7 +66,7 @@
         </section>
       </div>
 
-      <div class="pipeline-group">
+      <div class="pipeline-group" id="Example-Pipelines">
         <header class="group-name">
           <a href="#stub">Example-Pipelines</a> <a href="#stub" class="edit-group"><i class="fas fa-cog"></i></a>
           <a href="#stub" class="add-pipeline"><i class="fas fa-plus"></i> New Pipeline</a>

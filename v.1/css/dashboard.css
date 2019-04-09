@@ -137,6 +137,25 @@ a {
   -webkit-appearance: none;
 }
 
+.pipeline-group.start-with-empty .pipeline {
+  display: none;
+}
+.pipeline-group.start-with-empty .group-contents {
+  box-sizing: border-box;
+  height: 300px;
+  position: relative;
+}
+.pipeline-group.start-with-empty .group-contents:before {
+  font-size: 24px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #bbb;
+  content: "Looks pretty empty in here! Why not create a pipeline?";
+}
+
 .pipeline-group {
   margin: 0 30px 50px;
 }

@@ -1,4 +1,5 @@
 (function(global) {
+  var NEW_PIPELINE = queryRegexpCompile("new_pipeline_name");
   document.addEventListener("DOMContentLoaded", function() {
     initLinkStubs("a[href='#stub'],.run-ctl,.stage", [
       "*chuckles* I'm not functional!",
@@ -9,7 +10,18 @@
       "et, voila.",
       "yep. still ignoring you."
     ]);
+
+    detectAndFireReward();
   });
+
+  function detectAndFireReward() {
+    var mp = document.getElementById("my-pipelines");
+    if ("" !== newPipelineParam()) {
+      mp.querySelector(".pipeline .name").textContent = newPipelineParam();
+      mp.classList.remove("start-with-empty");
+    }
+
+  }
 
   function initLinkStubs(selector, phrases) {
     var timer;
@@ -39,4 +51,15 @@
       })
     }
   }
+
+  function queryRegexpCompile(key) {
+    return new RegExp("(\\?|&)" + key + "=([^&]+)(&|$)");
+  }
+
+  function newPipelineParam() {
+    var match = window.location.search.match(NEW_PIPELINE);
+    return match ? match[2].trim() : "";
+  }
+
+
 })(window);
