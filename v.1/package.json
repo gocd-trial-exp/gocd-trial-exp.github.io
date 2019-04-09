@@ -8,7 +8,8 @@
     "sass": "^1.18.0"
   },
   "scripts": {
-    "build": "sass scss/dashboard.scss:css/dashboard.css css"
+    "build": "sass scss/dashboard.scss:css/dashboard.css css",
+    "dev": "sass --watch scss:css"
   },
   "author": "Marques Lee <marques.lee@thoughtworks.com>",
   "license": "Apache-2.0",

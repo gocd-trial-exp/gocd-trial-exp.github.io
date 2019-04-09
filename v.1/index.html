@@ -1,74 +1,156 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GoCD Pipelines Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crel/4.0.1/crel.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
-    <script defer src="js/dashboard.js"></script>
-  </head>
-  <body>
-    <div id="sandbox">
-      <header class="root-header">
-        <a href="#stub" class="go-logo"></a>
+<head>
+  <title>GoCD Pipelines Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crel/4.0.1/crel.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+  <script defer src="js/dashboard.js"></script>
+</head>
+<body>
+  <div id="sandbox">
+    <header class="root-header">
+      <a href="#stub" class="go-logo"></a>
 
-        <ul class="menu">
-          <li class="menu-item"><a href="#stub">Dashboard</a></li>
-          <li class="menu-item"><a href="#stub">Agents</a></li>
-          <li class="menu-item"><a href="#stub">Analytics</a></li>
-          <li class="menu-item"><a href="#stub">Admin</a></li>
-        </ul>
+      <ul class="menu">
+        <li class="menu-item"><a href="#stub">Dashboard</a></li>
+        <li class="menu-item"><a href="#stub">Agents</a></li>
+        <li class="menu-item"><a href="#stub">Analytics</a></li>
+        <li class="menu-item"><a href="#stub">Admin</a></li>
+      </ul>
 
-        <a href="#stub" class="current-user"><i class="fas fa-user"></i> recovering-jenkins-user</a>
-      </header>
-      <nav class="personalization">
-        <a href="#stub" class="view active"><span><i class="fas fa-grip-vertical"></i> Default <i class="fas fa-pencil-alt"></i></span></a>
-        <a href="#stub" class="view"><span><i class="fas fa-grip-vertical"></i> Favorites</span></a>
-        <a href="#stub" class="add-view"><i class="fas fa-plus"></i></a>
-      </nav>
-      <main>
-        <div class="group-by">Group pipelines by:
-          <select>
-            <option>Pipeline Groups</option>
-            <option>Environments</option>
-          </select>
-        </div>
-        <div class="pipeline-group">
-          <header class="group-name">
-            <a href="#stub">my-pipelines</a> <a href="#stub" class="edit-group"><i class="fas fa-cog"></i></a>
-            <a href="#stub" class="add-pipeline"><i class="fas fa-plus"></i> New Pipeline</a>
-          </header>
-          <section class="group-contents">
+      <a href="#stub" class="current-user"><i class="fas fa-user"></i> recovering-jenkins-user</a>
+    </header>
+    <nav class="personalization">
+      <a href="#stub" class="view active"><span><i class="fas fa-grip-vertical"></i> Default <i class="fas fa-pencil-alt"></i></span></a>
+      <a href="#stub" class="view"><span><i class="fas fa-grip-vertical"></i> Favorites</span></a>
+      <a href="#stub" class="add-view"><i class="fas fa-plus"></i></a>
+    </nav>
+    <main>
+      <div class="group-by">Group pipelines by:
+        <select>
+          <option>Pipeline Groups</option>
+          <option>Environments</option>
+        </select>
+      </div>
 
-      <div class="pipeline">
-        <section class="controls">
-          <a href="#stub" class="settings" title="Edit Pipeline"><i class="fas fa-cog"></i></a>
-          <h3 class="name">my-first-pipeline</h3>
-          <button class="run-ctl play"><i class="fas fa-play"></i></button>
-          <button class="run-ctl play-plus"><i class="fas fa-play"></i><sup>+</sup></button>
-          <button class="run-ctl pause"><i class="fas fa-pause"></i></button>
-        </section>
-        <section class="info">
-          <div class="build-number">Instance: 1</div>
-          <ul class="inspect-links">
-            <li><a href="#stub">Compare</a></li>
-            <li><a href="#stub">Changes</a></li>
-            <li><a href="#stub">VSM</a></li>
-          </ul>
-          <p class="triggered-by">Triggered by changes <br/> on 14 Mar, 2019 at 22:12:21 Local Time</p>
-          <ul class="stages">
-            <li class="stage success"><i class="fas fa-check"></i></li>
-            <li class="stage success"><i class="fas fa-check"></i></li>
-            <li class="stage success"><i class="fas fa-check"></i></li>
-          </ul>
+      <div class="pipeline-group">
+        <header class="group-name">
+          <a href="#stub">my-pipelines</a> <a href="#stub" class="edit-group"><i class="fas fa-cog"></i></a>
+          <a href="#stub" class="add-pipeline"><i class="fas fa-plus"></i> New Pipeline</a>
+        </header>
+        <section class="group-contents">
+
+          <div class="pipeline">
+            <section class="controls">
+              <a href="#stub" class="settings" title="Edit Pipeline"><i class="fas fa-cog"></i></a>
+              <h3 class="name">my-first-pipeline</h3>
+              <button class="run-ctl play"><i class="fas fa-play"></i></button>
+              <button class="run-ctl play-plus"><i class="fas fa-play"></i><sup>+</sup></button>
+              <button class="run-ctl pause"><i class="fas fa-pause"></i></button>
+            </section>
+            <section class="info">
+              <div class="build-number">Instance: 1</div>
+              <ul class="inspect-links">
+                <li><a href="#stub">Compare</a></li>
+                <li><a href="#stub">Changes</a></li>
+                <li><a href="#stub">VSM</a></li>
+              </ul>
+              <p class="triggered-by">Triggered by changes <br/> on 14 Mar, 2019 at 22:12:21 Local Time</p>
+              <ul class="stages">
+                <li class="stage success"><i class="fas fa-check"></i></li>
+                <li class="stage success"><i class="fas fa-check"></i></li>
+                <li class="stage success"><i class="fas fa-check"></i></li>
+              </ul>
+            </section>
+          </div>
+
         </section>
       </div>
 
-          </section>
-        </div>
-      </main>
-    </div>
+      <div class="pipeline-group">
+        <header class="group-name">
+          <a href="#stub">Example-Pipelines</a> <a href="#stub" class="edit-group"><i class="fas fa-cog"></i></a>
+          <a href="#stub" class="add-pipeline"><i class="fas fa-plus"></i> New Pipeline</a>
+        </header>
+        <section class="group-contents">
 
-    <div id="messages"></div>
-  </body>
+          <div class="pipeline">
+            <section class="controls">
+              <a href="#stub" class="settings" title="Edit Pipeline"><i class="fas fa-cog"></i></a>
+              <h3 class="name">build-to-integration</h3>
+              <button class="run-ctl play"><i class="fas fa-play"></i></button>
+              <button class="run-ctl play-plus"><i class="fas fa-play"></i><sup>+</sup></button>
+              <button class="run-ctl pause"><i class="fas fa-pause"></i></button>
+            </section>
+            <section class="info">
+              <div class="build-number">Instance: 1</div>
+              <ul class="inspect-links">
+                <li><a href="#stub">Compare</a></li>
+                <li><a href="#stub">Changes</a></li>
+                <li><a href="#stub">VSM</a></li>
+              </ul>
+              <p class="triggered-by">Triggered by changes <br/> on 14 Mar, 2019 at 22:12:21 Local Time</p>
+              <ul class="stages">
+                <li class="stage success"><i class="fas fa-check"></i></li>
+                <li class="stage success"><i class="fas fa-check"></i></li>
+                <li class="stage success"><i class="fas fa-check"></i></li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="pipeline">
+            <section class="controls">
+              <a href="#stub" class="settings" title="Edit Pipeline"><i class="fas fa-cog"></i></a>
+              <h3 class="name">promote-to-staging</h3>
+              <button class="run-ctl play"><i class="fas fa-play"></i></button>
+              <button class="run-ctl play-plus"><i class="fas fa-play"></i><sup>+</sup></button>
+              <button class="run-ctl pause"><i class="fas fa-pause"></i></button>
+            </section>
+            <section class="info">
+              <div class="build-number">Instance: 1</div>
+              <ul class="inspect-links">
+                <li><a href="#stub">Compare</a></li>
+                <li><a href="#stub">Changes</a></li>
+                <li><a href="#stub">VSM</a></li>
+              </ul>
+              <p class="triggered-by">Triggered by changes <br/> on 14 Mar, 2019 at 22:12:21 Local Time</p>
+              <ul class="stages">
+                <li class="stage success"><i class="fas fa-check"></i></li>
+                <li class="stage success"><i class="fas fa-check"></i></li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="pipeline">
+            <section class="controls">
+              <a href="#stub" class="settings" title="Edit Pipeline"><i class="fas fa-cog"></i></a>
+              <h3 class="name">promote-to-prod</h3>
+              <button class="run-ctl play"><i class="fas fa-play"></i></button>
+              <button class="run-ctl play-plus"><i class="fas fa-play"></i><sup>+</sup></button>
+              <button class="run-ctl pause"><i class="fas fa-pause"></i></button>
+            </section>
+            <section class="info">
+              <div class="build-number">Instance: 1</div>
+              <ul class="inspect-links">
+                <li><a href="#stub">Compare</a></li>
+                <li><a href="#stub">Changes</a></li>
+                <li><a href="#stub">VSM</a></li>
+              </ul>
+              <p class="triggered-by">Triggered by changes <br/> on 14 Mar, 2019 at 22:12:21 Local Time</p>
+              <ul class="stages">
+                <li class="stage success"><i class="fas fa-check"></i></li>
+                <li class="stage success"><i class="fas fa-check"></i></li>
+              </ul>
+            </section>
+          </div>
+
+        </section>
+      </div>
+
+    </main>
+  </div>
+
+  <div id="messages"></div>
+</body>
 </html>
