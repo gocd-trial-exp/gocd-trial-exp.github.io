@@ -1,0 +1,291 @@
+#sandbox {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f4f8f9;
+  padding-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.root-header {
+  background: #000728;
+  height: 40px;
+  margin: 0;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.go-logo {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background: url(https://build.gocd.org/go/assets/webpack/media/go_logo-d40d9ed305139c7d110f7e0b4eef6698.svg);
+}
+
+.menu {
+  vertical-align: top;
+  display: inline-block;
+  margin: 0;
+  margin-left: 50px;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  height: 20px;
+}
+.menu .menu-item {
+  margin: 0;
+  margin-right: 20px;
+  padding: 0;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 20px;
+}
+.menu .menu-item a {
+  color: #fff;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.menu .menu-item a:hover, .menu .menu-item a:active, .menu .menu-item a:focus {
+  opacity: 1;
+}
+
+.current-user {
+  color: #bbb;
+  line-height: 20px;
+  height: 20px;
+  float: right;
+}
+
+.personalization {
+  margin: 0 0 15px;
+  padding: 0 30px;
+  height: 40px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.personalization .view, .personalization .add-view {
+  display: inline-block;
+  line-height: 40px;
+  height: 40px;
+  border-right: 1px solid #d6e0e2;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.personalization .add-view {
+  padding: 0 10px;
+  font-size: 14px;
+  color: #943a9e;
+}
+
+.personalization .view {
+  padding: 0;
+  font-weight: 500;
+  color: #1c435c;
+}
+.personalization .view > span {
+  box-sizing: border-box;
+  height: 40px;
+  display: inline-block;
+  padding: 0 15px;
+  padding-left: 10px;
+}
+.personalization .view .fa-grip-vertical {
+  cursor: grab;
+  color: #aaa;
+  margin-right: 5px;
+}
+.personalization .view:nth-of-type(1) {
+  border-left: 1px solid #d6e0e2;
+}
+.personalization .view:nth-of-type(1) > span {
+  padding-left: 15px;
+}
+.personalization .view.active {
+  color: #943a9e;
+}
+.personalization .view.active .fa-pencil-alt {
+  margin-left: 5px;
+}
+.personalization .view.active > span {
+  border-bottom: 3px solid #943a9e;
+}
+
+#messages {
+  padding: 50px 25%;
+  font-size: 24px;
+  color: #aaa;
+  font-weight: 600;
+  text-align: center;
+}
+
+.group-by {
+  margin: 15px 30px;
+}
+.group-by select {
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.pipeline-group {
+  margin: 0 30px 50px;
+}
+.pipeline-group .group-name {
+  border-radius: 10px 10px 0 0;
+  background: #e7eef0;
+  padding: 10px 10px 10px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+}
+.pipeline-group .group-name a {
+  color: #1585cf;
+}
+.pipeline-group .group-name .edit-group {
+  margin-left: 5px;
+  color: #647984;
+  font-size: 15px;
+  line-height: 25px;
+}
+.pipeline-group .group-name .edit-group:hover {
+  color: #1c435c;
+}
+.pipeline-group .group-name .add-pipeline, .pipeline-group .group-name .add-pipeline:hover {
+  color: #647984;
+}
+.pipeline-group .group-name .add-pipeline {
+  background: #fff;
+  font-size: 14px;
+  line-height: 25px;
+  float: right;
+  padding: 3px 15px;
+  margin-top: -2px;
+}
+.pipeline-group .group-contents {
+  padding: 30px;
+  background: #fff;
+}
+
+.pipeline {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  color: #333;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+.pipeline .controls {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+.pipeline .settings {
+  font-size: 18px;
+  float: right;
+  color: #aaa;
+}
+.pipeline .settings:hover, .pipeline .settings:active, .pipeline .settings:focus {
+  color: #666;
+}
+.pipeline .name {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.pipeline .run-ctl {
+  cursor: pointer;
+  display: inline-block;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 45px;
+  height: 24px;
+  padding: 5px;
+  line-height: 12px;
+  font-size: 10px;
+  position: relative;
+}
+.pipeline .run-ctl:hover, .pipeline .run-ctl:active {
+  border-color: #666;
+}
+.pipeline .run-ctl sup {
+  font-size: 10px;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+}
+.pipeline .info {
+  padding: 15px;
+}
+.pipeline .build-number {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.pipeline .inspect-links {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+}
+.pipeline .triggered-by {
+  font-size: 12px;
+  margin: 0 0 10px;
+  padding: 0;
+}
+.pipeline .stages {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+}
+.pipeline .stage {
+  cursor: pointer;
+  list-style: none;
+  color: #fff;
+  flex-grow: 1;
+  text-align: center;
+  margin: 0 5px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.inspect-links li {
+  display: inline-block;
+  font-size: 12px;
+  padding: 0 7px 0 4px;
+  margin: 0;
+  border-right: 1px solid #ddd;
+}
+
+.inspect-links li:last-child {
+  border: none;
+}
+
+.inspect-links a, .inspect-links a:hover, .inspect-links a:active, .inspect-links a:focus {
+  color: #1585cf;
+}
+
+.stage.success {
+  background: #00c853;
+}
+
+.stage:first-child {
+  margin-left: 0;
+}
+
+.stage:last-child {
+  margin-right: 0;
+}
+
+/*# sourceMappingURL=dashboard.css.map */

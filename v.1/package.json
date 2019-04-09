@@ -1,0 +1,23 @@
+{
+  "name": "v.1",
+  "version": "1.0.0",
+  "description": "GoCD Trial prototype v1",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.18.0"
+  },
+  "scripts": {
+    "build": "sass scss/dashboard.scss:css/dashboard.css css"
+  },
+  "author": "Marques Lee <marques.lee@thoughtworks.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gocd-trial-exp/gocd-trial-exp.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gocd-trial-exp/gocd-trial-exp.github.io/issues"
+  },
+  "homepage": "https://github.com/gocd-trial-exp/gocd-trial-exp.github.io#readme"
+}
