@@ -1,0 +1,154 @@
+#sandbox {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial,
+    sans-serif;
+  font-size: 14px;
+  background-color: #f4f8f9;
+  color: #333;
+  padding-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.root-header {
+  background: #000728;
+  height: 40px;
+  margin: 0;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.go-logo {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background: url(https://build.gocd.org/go/assets/webpack/media/go_logo-d40d9ed305139c7d110f7e0b4eef6698.svg);
+}
+
+.menu {
+  vertical-align: top;
+  display: inline-block;
+  margin: 0;
+  margin-left: 50px;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  height: 20px;
+
+  .menu-item {
+    margin: 0;
+    margin-right: 20px;
+    padding: 0;
+    display: inline-block;
+    font-weight: 500;
+    line-height: 20px;
+
+    a {
+      color: #fff;
+      text-transform: uppercase;
+      opacity: 0.75;
+
+      &:hover, &:active, &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.current-user {
+  color: #bbb;
+  line-height: 20px;
+  height: 20px;
+  float: right;
+}
+
+#messages {
+  padding: 50px 25%;
+  font-size: 24px;
+  color: #aaa;
+  font-weight: 600;
+  text-align: center;
+}
+
+.main-heading {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+  font-weight: 300;
+  font-size: 24px;
+  text-indent: 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+#test-connection {
+  display: inline-block;
+  padding: 0 20px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #333;
+}
+
+#connection-result {
+  margin-left: 20px;
+
+  .fatal,.success {
+    margin-left: 1ex;
+  }
+
+  .fatal {
+    color: #d00;
+  }
+
+  .success {
+    color: #00c853;
+  }
+}
+
+.fillable {
+  background-color: #fff;
+  margin: 30px;
+  padding: 30px;
+
+  .section-heading {
+    font-size: 30px;
+    font-weight: 500;
+
+    margin: 0 0 15px;
+    padding: 0;
+  }
+
+  .user-input {
+    font-size: 16px;
+    input, select {
+      font-size: inherit;
+    }
+
+    .field {
+      display: block;
+      margin-bottom: 15px;
+      .field-name {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+
+    .required {
+      .field-name::after {
+        content: "*";
+        margin-left: 0.5ex;
+        color: #d00;
+      }
+    }
+
+    input[type="url"] {
+      width: 35vw;
+    }
+  }
+}

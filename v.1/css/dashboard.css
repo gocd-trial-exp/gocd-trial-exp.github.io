@@ -65,8 +65,8 @@ a {
   padding: 0 30px;
   height: 40px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
-
 .personalization .view, .personalization .add-view {
   display: inline-block;
   line-height: 40px;
@@ -75,13 +75,11 @@ a {
   text-transform: uppercase;
   font-size: 12px;
 }
-
 .personalization .add-view {
   padding: 0 10px;
   font-size: 14px;
   color: #943a9e;
 }
-
 .personalization .view {
   padding: 0;
   font-weight: 500;
