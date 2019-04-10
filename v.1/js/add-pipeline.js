@@ -9,7 +9,7 @@
         empty(result).appendChild(document.createTextNode("..."))
       }, function success() {
         button.removeAttribute("disabled");
-        writeConnectionResult(result, "Connection successful!",
+        writeConnectionResult(result, "Connection succeeded!",
           crel("i", {class: "fas fa-check success"}));
       }, function fail(message) {
         button.removeAttribute("disabled");
@@ -60,10 +60,18 @@
       }
 
       before();
-      setTimeout(function() {
-        done();
-        connectionTest.running = false;
-      }, 400);
+
+      if (url.match(/\bbad-url\b/i)) {
+        setTimeout(function() {
+          fail("Connection failed!");
+          connectionTest.running = false;
+        }, 400);
+      } else {
+        setTimeout(function() {
+          done();
+          connectionTest.running = false;
+        }, 400);
+      }
     }
   }
 
