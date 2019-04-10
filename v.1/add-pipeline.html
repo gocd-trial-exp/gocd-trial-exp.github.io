@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Add a New Pipeline</title>
+  <link rel="stylesheet" href="css/lib/hack.css">
   <link rel="stylesheet" type="text/css" href="css/add-pipeline.css">
   <script defer src="js/lib/crel-4.0.1.min.js"></script>
   <script defer src="js/lib/font-awesome-5.8.1.min.js"></script>
@@ -28,42 +29,141 @@
       <article class="fillable">
         <section class="user-input">
           <h3 class="section-heading">Part 1: Material</h3>
+          <span class="note"><span class="sym">*</span> denotes a required field</span>
+
           <label class="field required">
-            <span class="field-name">Material Type</span> <select>
+            <span class="field-name">Material Type</span> <select id="material-type">
               <option>Git</option>
               <option>Mercurial</option>
+              <option>Pipeline</option>
             </select>
           </label>
-          <label class="field required">
-            <span class="field-name">Repository URL</span> <input type="url" placeholder="e.g., https://github.com/me/my-repo" name="url" required>
-          </label>
-          <div class="connection-test">
-            <button id="test-connection">Test Connection</button>
-            <span id="connection-result"></span>
+          <div class="alt-repo">
+            <label class="field required">
+              <span class="field-name">Repository URL</span> <input type="url" placeholder="e.g., https://github.com/me/my-repo" name="url" required>
+            </label>
+            <div class="connection-test">
+              <button id="test-connection" class="btn">Test Connection</button>
+              <span id="connection-result"></span>
+            </div>
+            <details class="advanced">
+              <summary>Advanced Settings</summary>
+              <label class="field">
+                <span class="field-name">Branch</span> <input type="name" placeholder="master">
+              </label>
+              <label class="field">
+                <span class="field-name">Destination Directory</span> <input type="name" placeholder="/path/to/checkout">
+              </label>
+            </details>
+          </div>
+          <div class="alt-pipeline">
+            <label class="field required">
+              <span class="field-name">Upstream Pipeline Name</span> <input type="text" placeholder="e.g., upstream-pipeline" name="upstream-pipeline-name" required>
+            </label>
+            <label class="field required">
+              <span class="field-name">Upstream Pipeline Stage Name</span> <input type="text" placeholder="e.g., upstream-stage" name="upstream-stage-name" required>
+            </label>
           </div>
         </section>
-        <aside class="concept-diagram material"></aside>
+        <figure class="concept-diagram material"></figure>
       </article>
 
       <article class="fillable">
         <section class="user-input">
           <h3 class="section-heading">Part 2: Pipeline Name</h3>
+          <span class="note"><span class="sym">*</span> denotes a required field</span>
+
           <label class="field required">
             <span class="field-name">Pipeline Name</span> <input type="text" placeholder="e.g., My-New-Pipeline" name="pipeline-name" required>
           </label>
         </section>
-        <aside class="concept-diagram pipeline"></aside>
+        <figure class="concept-diagram pipeline"></figure>
       </article>
 
       <article class="fillable">
         <section class="user-input">
           <h3 class="section-heading">Part 3: Stage Details</h3>
+          <span class="note"><span class="sym">*</span> denotes a required field</span>
+
           <label class="field required">
-            <span class="field-name">Pipeline Name</span> <input type="text" placeholder="e.g., My-New-Pipeline" name="pipeline-name" required>
+            <span class="field-name">Stage Name</span> <input type="text" placeholder="e.g., Test-and-Report" name="pipeline-name" required>
           </label>
+          <details class="advanced">
+            <summary>Advanced Settings</summary>
+            <div class="radio-set">
+              <span class="set-name">This stage runs:</span>
+              <label>
+                <input type="radio" name="stage-run-type" value="Automatically" checked>
+                Automatically
+              </label>
+              <label>
+                <input type="radio" name="stage-run-type" value="Manually">
+                Manually
+              </label>
+            </label>
+          </details>
         </section>
-        <aside class="concept-diagram pipeline"></aside>
+        <figure class="concept-diagram stage"></figure>
       </article>
+
+      <article class="fillable">
+        <section class="user-input">
+          <h3 class="section-heading">Part 4: Job and Tasks</h3>
+          <span class="note"><span class="sym">*</span> denotes a required field</span>
+
+          <label class="field required">
+            <span class="field-name">Job Name</span> <input type="text" placeholder="e.g., run-unit-tests" name="pipeline-name" required>
+          </label>
+
+          <div class="terminal-control">
+            <h3>Write job tasks here at the prompt:</h3>
+            <code class="exec-editor">
+              <p class="usage hideable closed"># Note that this is <strong>not a real script,</strong> so things like logical operators, loops, conditionals, and shell pipes <strong>will not work.</strong> If you need such features, please wrap your command as a script, e.g., <code>bash -c "... your script here ..."</code> or <code>cmd /c call "... your script here ..."</code>.
+
+# Additionally, <strong>inlined environment variables won't work</strong> without wrapping the command in a shell call. It's better to set them in the <strong>environment variable section above</strong>.
+
+# Other available special commands:
+#  <code>fetch-artifact [pipeline] &lt;stage&gt; &lt;job&gt; &lt;filepattern&gt;</code></p>
+              <p class="usage important">Press <strong>&lt;enter&gt;</strong> to save a command, and <strong>&lt;shift-enter&gt;</strong> to insert a <strong>newline</strong> (no need to terminate newlines with <code>\</code> or <code>^</code>).
+
+To edit an existing command, click on it.</p>
+              <pre contenteditable="true" class="current-editor"></pre>
+            </code>
+          </div>
+
+          <details class="advanced">
+            <summary>Advanced Settings</summary>
+            <div class="field environment-vars">
+              <span class="field-name">Environment Variables</span>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="text" name="env_key[]"/></td>
+                    <td><input type="text" name="env_val[]"/></td>
+                  </tr>
+                  <tr>
+                    <td><input type="text" name="env_key[]"/></td>
+                    <td><input type="text" name="env_val[]"/></td>
+                  </tr>
+                  <tr>
+                    <td><input type="text" name="env_key[]"/></td>
+                    <td><input type="text" name="env_val[]"/></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+
+        </section>
+        <figure class="concept-diagram job"></figure>
+      </article>
+
     </main>
   </div>
 </body>

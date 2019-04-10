@@ -83,16 +83,19 @@ a {
   border-bottom: 1px solid #ddd;
 }
 
-#test-connection {
+.btn {
   display: inline-block;
   padding: 0 20px;
-  height: 35px;
   line-height: 35px;
   border-radius: 3px;
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
   color: #333;
+}
+
+.connection-test {
+  margin-bottom: 30px;
 }
 
 #connection-result {
@@ -113,28 +116,142 @@ a {
 
 .fillable {
   background-color: #fff;
-  max-width: 1000px;
+  max-width: 1200px;
+  min-width: 1000px;
   margin: 30px auto;
   padding: 30px;
   display: flex;
+  justify-content: space-between;
+
+  .note {
+    display: inline-block;
+    font-size: 12px;
+    margin: 5px 0 15px;
+    .sym {
+      color: #d00;
+    }
+  }
 
   .section-heading {
     font-size: 30px;
     font-weight: 500;
 
-    margin: 0 0 15px;
+    margin: 0;
     padding: 0;
   }
 
   .concept-diagram {
+    margin: 0;
+    padding: 0;
+
+    flex-shrink: 0;
+    // border-left: 1px solid red;
     &.material {
       background-image: url(../img/gocd_1_material.svg);
       width: 484px;
       height: 280px;
-      background-position-x: -231px;
+      background-position-x: -234px;
+      background-position-y: -35px;
       background-repeat: no-repeat;
       background-size: 196%;
-      background-position-y: -35px;
+    }
+
+    &.pipeline {
+      background-image: url(../img/gocd_3_pipeline.svg);
+      width: 484px;
+      height: 115px;
+      background-repeat: no-repeat;
+      background-position-x: -80px;
+      background-position-y: -70px;
+      background-size: 137%;
+    }
+
+    &.stage {
+      background-image: url(../img/gocd_4_stage.svg);
+      width: 484px;
+      height: 245px;
+      background-repeat: no-repeat;
+      background-position-x: -316px;
+      background-size: 188%;
+      background-position-y: -48px;
+    }
+
+    &.job {
+      background-image: url(../img/gocd_5_job.svg);
+      width: 484px;
+      height: 268px;
+      background-repeat: no-repeat;
+      background-position-x: -287px;
+      background-size: 188%;
+      background-position-y: -30px;
+    }
+  }
+
+  // handles toggling fields between material types
+  .alt-pipeline {
+    display: none;
+  }
+
+  .field[data-type="Pipeline"] ~ .alt-pipeline {
+    display: block;
+  }
+
+  .field[data-type="Pipeline"] ~ .alt-repo {
+    display: none;
+  }
+
+  .advanced {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+
+    summary {
+      cursor: pointer;
+      outline: none;
+    }
+
+    &[open] {
+      padding-bottom: 30px;
+      summary {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .field,
+  .field-name,
+  .terminal-control {
+    margin-bottom: 30px;
+  }
+
+  .field {
+    display: block;
+
+    .field-name {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .environment-vars {
+    .field-name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+    th, td {
+      text-align: left;
+    }
+  }
+
+  .required {
+    .field-name::after {
+      content: "*";
+      margin-left: 0.5ex;
+      color: #d00;
     }
   }
 
@@ -154,27 +271,7 @@ a {
       width: 35vw;
       max-width: 500px;
     }
-
-    .field {
-      display: block;
-      margin-bottom: 30px;
-
-      .field-name {
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    .required {
-      .field-name::after {
-        content: "*";
-        margin-left: 0.5ex;
-        color: #d00;
-      }
-    }
   }
 }
+
+@import "task-terminal.scss";
