@@ -113,8 +113,10 @@ a {
 
 .fillable {
   background-color: #fff;
-  margin: 30px;
+  max-width: 1000px;
+  margin: 30px auto;
   padding: 30px;
+  display: flex;
 
   .section-heading {
     font-size: 30px;
@@ -124,18 +126,46 @@ a {
     padding: 0;
   }
 
+  .concept-diagram {
+    &.material {
+      background-image: url(../img/gocd_1_material.svg);
+      width: 484px;
+      height: 280px;
+      background-position-x: -231px;
+      background-repeat: no-repeat;
+      background-size: 196%;
+      background-position-y: -35px;
+    }
+  }
+
   .user-input {
     font-size: 16px;
     input, select {
       font-size: inherit;
     }
 
+    input[type="text"] {
+      padding: 5px;
+      width: 25vw;
+      max-width: 350px;
+    }
+
+    input[type="url"] {
+      width: 35vw;
+      max-width: 500px;
+    }
+
     .field {
       display: block;
-      margin-bottom: 15px;
+      margin-bottom: 30px;
+
       .field-name {
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
 
@@ -145,10 +175,6 @@ a {
         margin-left: 0.5ex;
         color: #d00;
       }
-    }
-
-    input[type="url"] {
-      width: 35vw;
     }
   }
 }

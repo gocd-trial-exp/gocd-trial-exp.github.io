@@ -106,8 +106,10 @@ a {
 
 .fillable {
   background-color: #fff;
-  margin: 30px;
+  max-width: 1000px;
+  margin: 30px auto;
   padding: 30px;
+  display: flex;
 }
 .fillable .section-heading {
   font-size: 30px;
@@ -115,27 +117,45 @@ a {
   margin: 0 0 15px;
   padding: 0;
 }
+.fillable .concept-diagram.material {
+  background-image: url(../img/gocd_1_material.svg);
+  width: 484px;
+  height: 280px;
+  background-position-x: -231px;
+  background-repeat: no-repeat;
+  background-size: 196%;
+  background-position-y: -35px;
+}
 .fillable .user-input {
   font-size: 16px;
 }
 .fillable .user-input input, .fillable .user-input select {
   font-size: inherit;
 }
+.fillable .user-input input[type=text] {
+  padding: 5px;
+  width: 25vw;
+  max-width: 350px;
+}
+.fillable .user-input input[type=url] {
+  width: 35vw;
+  max-width: 500px;
+}
 .fillable .user-input .field {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .fillable .user-input .field .field-name {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+.fillable .user-input .field:last-child {
+  margin-bottom: 0;
 }
 .fillable .user-input .required .field-name::after {
   content: "*";
   margin-left: 0.5ex;
   color: #d00;
-}
-.fillable .user-input input[type=url] {
-  width: 35vw;
 }
 
 /*# sourceMappingURL=add-pipeline.css.map */

@@ -24,9 +24,10 @@
 
     <main>
       <h2 class="main-heading">Add a New Pipeline</h2>
+
       <article class="fillable">
-        <h3 class="section-heading">Part 1: Material</h3>
         <section class="user-input">
+          <h3 class="section-heading">Part 1: Material</h3>
           <label class="field required">
             <span class="field-name">Material Type</span> <select>
               <option>Git</option>
@@ -41,7 +42,27 @@
             <span id="connection-result"></span>
           </div>
         </section>
-        <aside class="concept-diagram"></aside>
+        <aside class="concept-diagram material"></aside>
+      </article>
+
+      <article class="fillable">
+        <section class="user-input">
+          <h3 class="section-heading">Part 2: Pipeline Name</h3>
+          <label class="field required">
+            <span class="field-name">Pipeline Name</span> <input type="text" placeholder="e.g., My-New-Pipeline" name="pipeline-name" required>
+          </label>
+        </section>
+        <aside class="concept-diagram pipeline"></aside>
+      </article>
+
+      <article class="fillable">
+        <section class="user-input">
+          <h3 class="section-heading">Part 3: Stage Details</h3>
+          <label class="field required">
+            <span class="field-name">Pipeline Name</span> <input type="text" placeholder="e.g., My-New-Pipeline" name="pipeline-name" required>
+          </label>
+        </section>
+        <aside class="concept-diagram pipeline"></aside>
       </article>
     </main>
   </div>
