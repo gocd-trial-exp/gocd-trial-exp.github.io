@@ -115,6 +115,10 @@
         saveCommand(EDITOR, true);
       });
 
+      document.getElementById("save-and-run").addEventListener("click", function(e) {
+        saveCommand(EDITOR, true);
+      });
+
       term.addEventListener("keydown", function(e) {
         if (e.target.matches(".current-editor")) {
           keybindings(e);

@@ -311,6 +311,25 @@ a {
   position: relative;
 }
 
+.trial-first-created::before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  width: 128px;
+  height: 128px;
+  background: transparent url(https://files.gamebanana.com/img/ico/sprays/1upspray_copy4.png);
+  background-size: cover;
+  right: 0;
+  top: 50%;
+  margin-top: -64px;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+
 @-webkit-keyframes fadeOutUp {
   from {
     opacity: 1;
@@ -331,23 +350,68 @@ a {
     transform: translate3d(0, -100%, 0);
   }
 }
-.trial-first-created::before {
-  content: "";
-  position: absolute;
-  z-index: 10;
-  width: 128px;
-  height: 128px;
-  background: transparent url(https://files.gamebanana.com/img/ico/sprays/1upspray_copy4.png);
-  background-size: cover;
-  right: 0;
-  top: 50%;
-  margin-top: -64px;
-  -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-name: fadeOutUp;
-  animation-name: fadeOutUp;
+@-webkit-keyframes slideFromUnder {
+  from {
+    height: 0;
+  }
+  to {
+    height: 40px;
+  }
+}
+@keyframes slideFromUnder {
+  from {
+    height: 0;
+  }
+  to {
+    height: 40px;
+  }
+}
+.bruce-banner {
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  padding: 0 30px;
+  height: 0;
+  line-height: 40px;
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  font-family: sans-serif;
+  background-color: #00c853;
+  color: #333;
+}
+.bruce-banner.animate {
+  -webkit-animation: slideFromUnder 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s both;
+  animation: slideFromUnder 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s both;
+}
+.bruce-banner:hover {
+  background-color: #14e069;
+  cursor: pointer;
+}
+.bruce-banner:active {
+  background-color: #0fbc57;
+}
+.bruce-banner:after {
+  line-height: normal;
+  content: "esc";
+  font-size: 12px;
+  padding: 1px 4px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  background-color: rgba(220, 220, 220, 0.7);
+  float: right;
+  margin-top: 10px;
+  margin-left: -100%;
+}
+.bruce-banner:before {
+  line-height: normal;
+  padding: 2px 4px;
+  margin-right: 4.5ex;
+  font-size: 12px;
+  content: "click to close, or press";
+  float: right;
+  margin-top: 10px;
+  margin-left: -100%;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
