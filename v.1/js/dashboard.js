@@ -20,16 +20,17 @@
 
   function detectAndFireReward() {
     if ("" !== newPipelineParam()) {
-      oneUp();
+      var group = document.getElementById("my-pipelines");
+      group.querySelector(".pipeline .name").textContent = newPipelineParam();
+      group.classList.remove("start-with-empty");
+
+      // oneUp(group);
       rewardBanner();
     }
   }
 
-  function oneUp() {
-    var mp = document.getElementById("my-pipelines");
-    mp.querySelector(".pipeline .name").textContent = newPipelineParam();
-    mp.classList.remove("start-with-empty");
-    var pipe = mp.querySelector(".pipeline");
+  function oneUp(group) {
+    var pipe = group.querySelector(".pipeline");
     pipe.classList.add("trial-first-created");
 
     setTimeout(function() {
