@@ -92,6 +92,20 @@ a {
   font-weight: 400;
   cursor: pointer;
   color: #333;
+
+  &.primary {
+    background-color: #943a9e;
+    color: #fff;
+  }
+}
+
+a.btn {
+  text-decoration: none;
+  border: 1px solid #ddd;
+
+  &.primary {
+    border-color: #943a9e;
+  }
 }
 
 .connection-test {
@@ -114,12 +128,28 @@ a {
   }
 }
 
-.fillable {
+.fillable, .actions {
   background-color: #fff;
   max-width: 1200px;
   min-width: 1000px;
   margin: 30px auto;
   padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  .btn {
+    font-size: 16px;
+  }
+
+  #validation-msg {
+    margin-right: 2ex;
+    color: #d00;
+  }
+}
+
+.fillable {
   display: flex;
   justify-content: space-between;
 
@@ -237,16 +267,6 @@ a {
     }
   }
 
-  .environment-vars {
-    .field-name {
-      font-weight: 700;
-      font-size: 16px;
-    }
-    th, td {
-      text-align: left;
-    }
-  }
-
   .required {
     .field-name::after {
       content: "*";
@@ -270,6 +290,22 @@ a {
     input[type="url"] {
       width: 35vw;
       max-width: 500px;
+    }
+  }
+
+  .environment-vars {
+    .field-name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+    th, td {
+      text-align: left;
+    }
+
+    .key-val {
+      input[type="text"], input[type="password"] {
+        width: 300px;
+      }
     }
   }
 }

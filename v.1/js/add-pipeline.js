@@ -8,6 +8,19 @@
       document.querySelector('.fillable input').focus();
     }, 10);
 
+    document.getElementById("save-and-run").addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var pipelineName = (document.querySelector("input[name='pipeline-name']").value || "").trim();
+
+      if ("" !== pipelineName) {
+        window.location = e.currentTarget.getAttribute("href") + "?new_pipeline_name=" + pipelineName;
+      } else {
+        empty(document.getElementById("validation-msg")).textContent = "Pipeline name is missing!";
+      }
+    });
+
     initLinkStubs("a[href='#stub'],.run-ctl,.stage", [
       "*chuckles* I'm not functional!",
       "tee-hee, that tickles!",

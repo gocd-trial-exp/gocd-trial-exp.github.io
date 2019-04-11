@@ -89,6 +89,18 @@ a {
   cursor: pointer;
   color: #333;
 }
+.btn.primary {
+  background-color: #943a9e;
+  color: #fff;
+}
+
+a.btn {
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+a.btn.primary {
+  border-color: #943a9e;
+}
 
 .connection-test {
   margin-bottom: 30px;
@@ -107,12 +119,25 @@ a {
   color: #00c853;
 }
 
-.fillable {
+.fillable, .actions {
   background-color: #fff;
   max-width: 1200px;
   min-width: 1000px;
   margin: 30px auto;
   padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions .btn {
+  font-size: 16px;
+}
+.actions #validation-msg {
+  margin-right: 2ex;
+  color: #d00;
+}
+
+.fillable {
   display: flex;
   justify-content: space-between;
 }
@@ -210,13 +235,6 @@ a {
 .fillable .field:last-child {
   margin-bottom: 0;
 }
-.fillable .environment-vars .field-name {
-  font-weight: 700;
-  font-size: 16px;
-}
-.fillable .environment-vars th, .fillable .environment-vars td {
-  text-align: left;
-}
 .fillable .required .field-name::after {
   content: "*";
   margin-left: 0.5ex;
@@ -236,6 +254,16 @@ a {
 .fillable .user-input input[type=url] {
   width: 35vw;
   max-width: 500px;
+}
+.fillable .environment-vars .field-name {
+  font-weight: 700;
+  font-size: 16px;
+}
+.fillable .environment-vars th, .fillable .environment-vars td {
+  text-align: left;
+}
+.fillable .environment-vars .key-val input[type=text], .fillable .environment-vars .key-val input[type=password] {
+  width: 300px;
 }
 
 .exec-editor {

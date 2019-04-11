@@ -19,8 +19,13 @@
     if ("" !== newPipelineParam()) {
       mp.querySelector(".pipeline .name").textContent = newPipelineParam();
       mp.classList.remove("start-with-empty");
-    }
+      var pipe = mp.querySelector(".pipeline");
+      pipe.classList.add("trial-first-created");
 
+      setTimeout(function() {
+        pipe.classList.remove("trial-first-created");
+      }, 1500)
+    }
   }
 
   function initLinkStubs(selector, phrases) {
