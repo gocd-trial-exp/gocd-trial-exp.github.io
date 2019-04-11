@@ -1,0 +1,105 @@
+#sandbox {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f4f8f9;
+  color: #333;
+  padding-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.root-header {
+  background: #000728;
+  height: 40px;
+  margin: 0;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.go-logo {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background: url(https://build.gocd.org/go/assets/webpack/media/go_logo-d40d9ed305139c7d110f7e0b4eef6698.svg);
+}
+
+.menu {
+  vertical-align: top;
+  display: inline-block;
+  margin: 0;
+  margin-left: 50px;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  height: 20px;
+}
+.menu .menu-item {
+  margin: 0;
+  margin-right: 20px;
+  padding: 0;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 20px;
+}
+.menu .menu-item a {
+  color: #fff;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.menu .menu-item a:hover, .menu .menu-item a:active, .menu .menu-item a:focus {
+  opacity: 1;
+}
+
+.current-user {
+  color: #bbb;
+  line-height: 20px;
+  height: 20px;
+  float: right;
+}
+
+#messages {
+  padding: 50px 25%;
+  font-size: 24px;
+  color: #aaa;
+  font-weight: 600;
+  text-align: center;
+}
+
+.main-heading {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+  font-weight: 300;
+  font-size: 24px;
+  text-indent: 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0 20px;
+  line-height: 35px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #333;
+}
+.btn.primary {
+  background-color: #943a9e;
+  color: #fff;
+}
+
+a.btn {
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+a.btn.primary {
+  border-color: #943a9e;
+}
+
+/*# sourceMappingURL=header.css.map */

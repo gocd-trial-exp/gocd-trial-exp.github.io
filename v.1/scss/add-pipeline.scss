@@ -1,112 +1,4 @@
-#sandbox {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial,
-    sans-serif;
-  font-size: 14px;
-  background-color: #f4f8f9;
-  color: #333;
-  padding-bottom: 10px;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.root-header {
-  background: #000728;
-  height: 40px;
-  margin: 0;
-  padding: 10px 30px;
-  box-sizing: border-box;
-  color: #fff;
-}
-
-.go-logo {
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-  background: url(https://build.gocd.org/go/assets/webpack/media/go_logo-d40d9ed305139c7d110f7e0b4eef6698.svg);
-}
-
-.menu {
-  vertical-align: top;
-  display: inline-block;
-  margin: 0;
-  margin-left: 50px;
-  padding: 0;
-  list-style: none;
-  font-size: 12px;
-  height: 20px;
-
-  .menu-item {
-    margin: 0;
-    margin-right: 20px;
-    padding: 0;
-    display: inline-block;
-    font-weight: 500;
-    line-height: 20px;
-
-    a {
-      color: #fff;
-      text-transform: uppercase;
-      opacity: 0.75;
-
-      &:hover, &:active, &:focus {
-        opacity: 1;
-      }
-    }
-  }
-}
-
-.current-user {
-  color: #bbb;
-  line-height: 20px;
-  height: 20px;
-  float: right;
-}
-
-#messages {
-  padding: 50px 25%;
-  font-size: 24px;
-  color: #aaa;
-  font-weight: 600;
-  text-align: center;
-}
-
-.main-heading {
-  margin: 0;
-  padding: 0;
-  line-height: 40px;
-  font-weight: 300;
-  font-size: 24px;
-  text-indent: 30px;
-  border-bottom: 1px solid #ddd;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0 20px;
-  line-height: 35px;
-  border-radius: 3px;
-  font-size: 14px;
-  font-weight: 400;
-  cursor: pointer;
-  color: #333;
-
-  &.primary {
-    background-color: #943a9e;
-    color: #fff;
-  }
-}
-
-a.btn {
-  text-decoration: none;
-  border: 1px solid #ddd;
-
-  &.primary {
-    border-color: #943a9e;
-  }
-}
+@import "header.scss";
 
 .connection-test {
   margin-bottom: 30px;
@@ -171,15 +63,26 @@ a.btn {
   }
 
   .concept-diagram {
+    position: relative;
     margin: 0;
     padding: 0;
 
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      font-size: 16px;
+      text-align: center;
+    }
+
     flex-shrink: 0;
-    // border-left: 1px solid red;
+
     &.material {
       background-image: url(../img/gocd_1_material.svg);
       width: 484px;
-      height: 280px;
+      height: 315px;
       background-position-x: -234px;
       background-position-y: -35px;
       background-repeat: no-repeat;
@@ -189,7 +92,7 @@ a.btn {
     &.pipeline {
       background-image: url(../img/gocd_3_pipeline.svg);
       width: 484px;
-      height: 115px;
+      height: 147px;
       background-repeat: no-repeat;
       background-position-x: -80px;
       background-position-y: -70px;
@@ -199,7 +102,7 @@ a.btn {
     &.stage {
       background-image: url(../img/gocd_4_stage.svg);
       width: 484px;
-      height: 245px;
+      height: 265px;
       background-repeat: no-repeat;
       background-position-x: -316px;
       background-size: 188%;
@@ -209,7 +112,7 @@ a.btn {
     &.job {
       background-image: url(../img/gocd_5_job.svg);
       width: 484px;
-      height: 268px;
+      height: 308px;
       background-repeat: no-repeat;
       background-position-x: -287px;
       background-size: 188%;

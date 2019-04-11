@@ -2,6 +2,7 @@
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-size: 14px;
   background-color: #f4f8f9;
+  color: #333;
   padding-bottom: 10px;
 }
 
@@ -58,6 +59,47 @@ a {
   line-height: 20px;
   height: 20px;
   float: right;
+}
+
+#messages {
+  padding: 50px 25%;
+  font-size: 24px;
+  color: #aaa;
+  font-weight: 600;
+  text-align: center;
+}
+
+.main-heading {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+  font-weight: 300;
+  font-size: 24px;
+  text-indent: 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0 20px;
+  line-height: 35px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #333;
+}
+.btn.primary {
+  background-color: #943a9e;
+  color: #fff;
+}
+
+a.btn {
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+a.btn.primary {
+  border-color: #943a9e;
 }
 
 .personalization {

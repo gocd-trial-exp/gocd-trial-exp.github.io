@@ -3,6 +3,14 @@
   var ROCKET_EMOJI = "\uD83D\uDE80"; // old JS needs surrogate pair to represent U+1F680 (https://mothereff.in/js-escapes#1%F0%9F%9A%80); es6 can do \u{1F680};
 
   document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function(e) {
+      if (e.target.matches("a[href='index.html']")) {
+        e.stopPropagation();
+        e.preventDefault();
+        window.location.reload(); // preserve query params to keep the facade
+      }
+    });
+
     initLinkStubs("a[href='#stub'],.run-ctl,.stage", [
       "*chuckles* I'm not functional!",
       "tee-hee, that tickles!",

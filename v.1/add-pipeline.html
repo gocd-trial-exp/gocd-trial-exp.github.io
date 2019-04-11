@@ -11,7 +11,7 @@
 <body>
   <div id="sandbox">
     <header id="root-header" class="root-header">
-      <a href="#stub" class="go-logo"></a>
+      <a href="index.html" class="go-logo"></a>
 
       <ul class="menu">
         <li class="menu-item"><a href="index.html">Dashboard</a></li>
@@ -65,7 +65,9 @@
             </label>
           </div>
         </section>
-        <figure class="concept-diagram material"></figure>
+        <figure class="concept-diagram material">
+          <figcaption>A <strong>material</strong> triggers your pipeline to run. Typically this is a <strong>source repository</strong> or an <strong>upstream pipeline</strong>.</figcaption>
+        </figure>
       </article>
 
       <article class="fillable">
@@ -77,7 +79,9 @@
             <span class="field-name">Pipeline Name</span> <input type="text" placeholder="e.g., My-New-Pipeline" name="pipeline-name" required>
           </label>
         </section>
-        <figure class="concept-diagram pipeline"></figure>
+        <figure class="concept-diagram pipeline">
+          <figcaption>In GoCD, a <strong>pipeline</strong> is a representation of a <strong>workflow</strong>. Pipelines consist of one or more <strong>stages</strong>.</figcaption>
+        </figure>
       </article>
 
       <article class="fillable">
@@ -103,7 +107,9 @@
             </label>
           </details>
         </section>
-        <figure class="concept-diagram stage"></figure>
+        <figure class="concept-diagram stage">
+          <figcaption>A <strong>stage</strong> is a group of jobs, and a <strong>job</strong> is a piece of work to execute.</figcaption>
+        </figure>
       </article>
 
       <article class="fillable">
@@ -161,7 +167,9 @@ To edit an existing command, click on it.</p>
           </details>
 
         </section>
-        <figure class="concept-diagram job"></figure>
+        <figure class="concept-diagram job">
+          <figcaption>A <strong>job</strong>  is like a script, where each sequential step is called a <strong>task</strong>. Typically, a task is a single command.</figcaption>
+        </figure>
       </article>
 
       <footer class="actions">

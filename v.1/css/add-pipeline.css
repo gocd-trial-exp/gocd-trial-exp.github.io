@@ -156,14 +156,23 @@ a.btn.primary {
   padding: 0;
 }
 .fillable .concept-diagram {
+  position: relative;
   margin: 0;
   padding: 0;
   flex-shrink: 0;
 }
+.fillable .concept-diagram figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 16px;
+  text-align: center;
+}
 .fillable .concept-diagram.material {
   background-image: url(../img/gocd_1_material.svg);
   width: 484px;
-  height: 280px;
+  height: 315px;
   background-position-x: -234px;
   background-position-y: -35px;
   background-repeat: no-repeat;
@@ -172,7 +181,7 @@ a.btn.primary {
 .fillable .concept-diagram.pipeline {
   background-image: url(../img/gocd_3_pipeline.svg);
   width: 484px;
-  height: 115px;
+  height: 147px;
   background-repeat: no-repeat;
   background-position-x: -80px;
   background-position-y: -70px;
@@ -181,7 +190,7 @@ a.btn.primary {
 .fillable .concept-diagram.stage {
   background-image: url(../img/gocd_4_stage.svg);
   width: 484px;
-  height: 245px;
+  height: 265px;
   background-repeat: no-repeat;
   background-position-x: -316px;
   background-size: 188%;
@@ -190,7 +199,7 @@ a.btn.primary {
 .fillable .concept-diagram.job {
   background-image: url(../img/gocd_5_job.svg);
   width: 484px;
-  height: 268px;
+  height: 308px;
   background-repeat: no-repeat;
   background-position-x: -287px;
   background-size: 188%;
