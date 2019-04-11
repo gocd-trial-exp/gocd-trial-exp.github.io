@@ -21,14 +21,8 @@
       }
     });
 
-    initLinkStubs("a[href='#stub'],.run-ctl,.stage", [
-      "*chuckles* I'm not functional!",
-      "tee-hee, that tickles!",
-      "oh stop it, you.",
-      "and for my next trick: pull my finger!",
-      "all play and no work makes me...lazy.",
-      "et, voila.",
-      "yep. still ignoring you."
+    initLinkStubs("a[href='#stub']", [
+      "Pay no mind to the nerd behind the curtain!"
     ]);
   });
 
@@ -232,21 +226,34 @@
       if ("number" === typeof timer) {
         clearTimeout(timer);
       }
-      msg.innerText = randomPhrase();
+
+      crel(empty(msg), {class: "anim-fast"}, [
+        crel("img", {src: "img/nerd.jpg"}),
+        crel("span", [
+          randomPhrase(),
+          crel("br"),
+          crel("br"),
+          "(I'm not actually functional)"
+        ])
+      ]);
+
       timer = setTimeout(function() {
-        msg.innerText = "";
+        empty(msg).classList.remove("anim-fast");
       }, 1500);
     }
 
-    var clickables = document.querySelectorAll(selector);
+    document.body.addEventListener("click", function(e) {
+      console.log(e.type)
+      console.log(e.target)
+      console.log(selector)
+      console.log(e.target.matches(selector))
 
-    for (var i = 0, len = clickables.length; i < len; i++) {
-      clickables[i].addEventListener("click", function(e) {
+      if (e.target.matches(selector) || closest(e.target, selector)) {
         e.stopPropagation();
         e.preventDefault();
         noWorky();
-      })
-    }
+      }
+    });
   }
 })(window);
 
