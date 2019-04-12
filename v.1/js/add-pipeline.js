@@ -156,7 +156,7 @@
       if (!el) {
         el = EDITOR;
       }
-      var line = el.textContent.trim();
+      var line = el.innerText.trim(); // preserves newlines in FF vs textContent
 
       if ("" !== line) {
         var cmdStr = line, argStr = "";
