@@ -1,3 +1,5 @@
+@import "mixins.scss";
+
 .exec-editor {
   display: block;
   border-radius: 5px;
@@ -34,29 +36,35 @@
   .hideable {
     position: relative;
     overflow: hidden;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 
     &::after {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      content: "Double-click to Hide Help";
-      color: #fff;
+      content: "Double-click to hide help";
+      color: #bbb;
       cursor: pointer;
-      text-align: center;
+      text-align: right;
+      @include no-select;
+    }
+
+    &:hover {
+      &::after {
+        color: #fff;
+      }
     }
 
     &.closed {
-      height: 30px;
+      height: 15px;
       margin: 0;
+      @include no-select;
+
       &::after {
-        padding-top: 25px;
+        padding-top: 5px;
         top: 0;
-        content: "Double-click to Show Help";
-        color: #fff;
-        cursor: pointer;
-        text-align: center;
+        content: "Double-click to show help";
         background: -moz-linear-gradient(
           top,
           rgba(51, 54, 64, 0.4) 0%,

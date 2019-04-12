@@ -368,29 +368,41 @@ a.btn.primary {
 .exec-editor .hideable {
   position: relative;
   overflow: hidden;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 }
 .exec-editor .hideable::after {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  content: "Double-click to Hide Help";
-  color: #fff;
+  content: "Double-click to hide help";
+  color: #bbb;
   cursor: pointer;
-  text-align: center;
+  text-align: right;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.exec-editor .hideable:hover::after {
+  color: #fff;
 }
 .exec-editor .hideable.closed {
-  height: 30px;
+  height: 15px;
   margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .exec-editor .hideable.closed::after {
-  padding-top: 25px;
+  padding-top: 5px;
   top: 0;
-  content: "Double-click to Show Help";
-  color: #fff;
-  cursor: pointer;
-  text-align: center;
+  content: "Double-click to show help";
   background: -moz-linear-gradient(top, rgba(51, 54, 64, 0.4) 0%, #333640 100%);
   /* FF3.6+ */
   background: -webkit-linear-gradient(top, rgba(51, 54, 64, 0.4) 0%, #333640 100%);
