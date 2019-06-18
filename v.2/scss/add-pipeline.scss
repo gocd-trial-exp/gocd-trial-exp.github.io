@@ -1,0 +1,216 @@
+@import "header.scss";
+
+.connection-test {
+  margin-bottom: 30px;
+}
+
+#connection-result {
+  margin-left: 20px;
+
+  .fatal,.success {
+    margin-left: 1ex;
+  }
+
+  .fatal {
+    color: #d00;
+  }
+
+  .success {
+    color: #00c853;
+  }
+}
+
+.fillable, .actions {
+  background-color: #fff;
+  max-width: 1200px;
+  min-width: 1000px;
+  margin: 30px auto;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  .btn {
+    font-size: 16px;
+  }
+
+  #validation-msg {
+    margin-right: 2ex;
+    color: #d00;
+  }
+}
+
+.fillable {
+  display: flex;
+  justify-content: space-between;
+
+  .note {
+    display: inline-block;
+    font-size: 12px;
+    margin: 5px 0 15px;
+    .sym {
+      color: #d00;
+    }
+  }
+
+  .section-heading {
+    font-size: 30px;
+    font-weight: 500;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .concept-diagram {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      font-size: 16px;
+      text-align: center;
+    }
+
+    flex-shrink: 0;
+
+    &.material {
+      background-image: url(../img/gocd_1_material.svg);
+      width: 484px;
+      height: 315px;
+      background-position-x: -234px;
+      background-position-y: -35px;
+      background-repeat: no-repeat;
+      background-size: 196%;
+    }
+
+    &.pipeline {
+      background-image: url(../img/gocd_3_pipeline.svg);
+      width: 484px;
+      height: 147px;
+      background-repeat: no-repeat;
+      background-position-x: -80px;
+      background-position-y: -70px;
+      background-size: 137%;
+    }
+
+    &.stage {
+      background-image: url(../img/gocd_4_stage.svg);
+      width: 484px;
+      height: 265px;
+      background-repeat: no-repeat;
+      background-position-x: -316px;
+      background-size: 188%;
+      background-position-y: -48px;
+    }
+
+    &.job {
+      background-image: url(../img/gocd_5_job.svg);
+      width: 484px;
+      height: 308px;
+      background-repeat: no-repeat;
+      background-position-x: -287px;
+      background-size: 188%;
+      background-position-y: -30px;
+    }
+  }
+
+  // handles toggling fields between material types
+  .alt-pipeline {
+    display: none;
+  }
+
+  .field[data-type="Pipeline"] ~ .alt-pipeline {
+    display: block;
+  }
+
+  .field[data-type="Pipeline"] ~ .alt-repo {
+    display: none;
+  }
+
+  .advanced {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+
+    summary {
+      cursor: pointer;
+      outline: none;
+    }
+
+    &[open] {
+      padding-bottom: 30px;
+      summary {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .field,
+  .field-name,
+  .terminal-control {
+    margin-bottom: 30px;
+  }
+
+  .field {
+    display: block;
+
+    .field-name {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .required {
+    .field-name::after {
+      content: "*";
+      margin-left: 0.5ex;
+      color: #d00;
+    }
+  }
+
+  .user-input {
+    font-size: 16px;
+    input, select {
+      font-size: inherit;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      width: 25vw;
+      max-width: 350px;
+    }
+
+    input[type="url"] {
+      width: 35vw;
+      max-width: 500px;
+    }
+  }
+
+  .environment-vars {
+    .field-name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+    th, td {
+      text-align: left;
+    }
+
+    .key-val {
+      input[type="text"], input[type="password"] {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@import "task-terminal.scss";

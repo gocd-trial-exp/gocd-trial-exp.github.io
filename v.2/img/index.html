@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>svgs</title>
+
+  <style type="text/css">
+    object {
+      border: 1px solid red;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function setViewbox(svg) {
+      if ("string" === typeof svg) {
+        svg = document.getElementById(svg).svg;
+      }
+      var bB = svg.getBBox();
+      console.log(bB)
+      svg.setAttribute('viewBox', bB.x + ',' + bB.y + ',' + bB.width + ',' + bB.height);
+    }
+
+    function mkSvg(src) {
+      var obj = document.createElement("object");
+      obj.setAttribute("id", src);
+      obj.setAttribute("type", "image/svg+xml");
+      obj.setAttribute("data", src);
+      obj.addEventListener("load", function() {
+        const svg = obj.svg = this.getSVGDocument().querySelector("svg");
+      });
+      return obj;
+    }
+
+    function mkBtn(src) {
+      var obj = document.createElement("button");
+      obj.textContent = "Set Bounds for " + src;
+      obj.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        setViewbox(src);
+      });
+      return obj;
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      [
+        "gocd_1_material.svg",
+        "gocd_3_pipeline.svg",
+        "gocd_4_stage.svg",
+        "gocd_5_job.svg"
+      ].forEach(function(svg) {
+        var div = document.createElement("div");
+        div.appendChild(mkSvg(svg));
+        div.appendChild(mkBtn(svg));
+        document.body.appendChild(div);
+      });
+    });
+  </script>
+</head>
+<body>
+
+</body>
+</html>

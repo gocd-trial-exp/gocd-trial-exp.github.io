@@ -1,0 +1,279 @@
+@import "header.scss";
+
+.personalization {
+  margin: 0 0 15px;
+  padding: 0 30px;
+  height: 40px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+
+  .view, .add-view {
+    display: inline-block;
+    line-height: 40px;
+    height: 40px;
+    border-right: 1px solid #d6e0e2;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .add-view {
+    padding: 0 10px;
+    font-size: 14px;
+    color: #943a9e;
+  }
+
+  .view {
+    padding: 0;
+    font-weight: 500;
+    color: #1c435c;
+
+    > span {
+      box-sizing: border-box;
+      height: 40px;
+      display: inline-block;
+      padding: 0 15px;
+      padding-left: 10px;
+    }
+
+    .fa-grip-vertical {
+      cursor: grab;
+      color: #aaa;
+      margin-right: 5px;
+    }
+
+    &:nth-of-type(1) {
+      border-left: 1px solid #d6e0e2;
+      > span {
+        padding-left: 15px;
+      }
+    }
+
+    &.active {
+      color: #943a9e;
+
+      .fa-pencil-alt {
+        margin-left: 5px;
+      }
+
+      > span {
+        border-bottom: 3px solid #943a9e;
+      }
+    }
+  }
+}
+
+.group-by {
+  margin: 15px 30px;
+
+  select {
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+}
+
+.pipeline-group.start-with-empty {
+  .pipeline {
+    display: none;
+  }
+
+  .group-contents {
+    box-sizing: border-box;
+    height: 300px;
+    position: relative;
+    // background: #fff url(../tumbleweed.gif) no-repeat center center;
+
+    &:before {
+      font-size: 24px;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      color: #bbb;
+      content: "Looks pretty empty in here! Why not create a pipeline?"
+    }
+  }
+}
+
+.pipeline-group {
+  margin: 0 30px 50px;
+
+  .group-name {
+    border-radius: 10px 10px 0 0;
+    background: #e7eef0;
+    padding: 10px 10px 10px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+
+    a { color: #1585cf; }
+
+    .edit-group {
+      margin-left: 5px;
+      color: #647984;
+      font-size: 15px;
+      line-height: 25px;
+
+      &:hover {
+        color: #1c435c;
+      }
+    }
+
+    .add-pipeline, .add-pipeline:hover {
+      color: #647984;
+    }
+
+    .add-pipeline {
+      background: #fff;
+      font-size: 14px;
+      line-height: 25px;
+      float: right;
+      padding: 3px 15px;
+      margin-top: -2px;
+    }
+  }
+
+  .group-contents {
+    padding: 30px;
+    background: #fff;
+
+    display: flex;
+  }
+}
+
+// =======================================
+
+.pipeline {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  color: #333;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 300px;
+  margin-right: 10px;
+
+  .controls {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .settings {
+    font-size: 18px;
+    float: right;
+    color: #aaa;
+  }
+
+  .settings:hover, .settings:active, .settings:focus {
+    color: #666;
+  }
+
+  .name {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .run-ctl {
+    cursor: pointer;
+    display: inline-block;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 45px;
+    height: 24px;
+    padding: 5px;
+    line-height: 12px;
+    font-size: 10px;
+    position: relative;
+
+    &:hover, &:active {
+      border-color: #666;
+    }
+
+    sup {
+      font-size: 10px;
+      font-weight: 600;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .info {
+    padding: 15px;
+  }
+
+  .build-number {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .inspect-links {
+    list-style: none;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .triggered-by {
+    font-size: 12px;
+    margin: 0 0 10px;
+    padding: 0;
+  }
+
+  .stages {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .stage {
+    cursor: pointer;
+    list-style: none;
+    color: #fff;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 5px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.inspect-links li {
+  display: inline-block;
+  font-size: 12px;
+  padding: 0 7px 0 4px;
+  margin: 0;
+  border-right: 1px solid #ddd;
+}
+
+.inspect-links li:last-child {
+  border: none;
+}
+
+.inspect-links a, .inspect-links a:hover, .inspect-links a:active, .inspect-links a:focus {
+  color: #1585cf;
+}
+
+.stage.success {
+  background: #00c853;
+}
+
+.stage:first-child {
+  margin-left: 0;
+}
+
+.stage:last-child {
+  margin-right: 0;
+}
+
+@import "achievement.scss";

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add a New Pipeline</title>
+  <link rel="stylesheet" href="css/lib/hack.css">
+  <link rel="stylesheet" type="text/css" href="css/add-pipeline.css">
+  <script defer src="js/lib/crel-4.0.1.min.js"></script>
+  <script defer src="js/lib/font-awesome-5.8.1.min.js"></script>
+  <script defer src="js/add-pipeline.js"></script>
+</head>
+<body>
+  <div id="sandbox">
+    <header id="root-header" class="root-header">
+      <a href="index.html" class="go-logo"></a>
+
+      <ul class="menu">
+        <li class="menu-item"><a href="index.html">Dashboard</a></li>
+        <li class="menu-item"><a href="#stub">Agents</a></li>
+        <li class="menu-item"><a href="#stub">Analytics</a></li>
+        <li class="menu-item"><a href="#stub">Admin</a></li>
+      </ul>
+
+      <a href="#stub" class="current-user"><i class="fas fa-user"></i> recovering-jenkins-user</a>
+    </header>
+
+    <main>
+      <h2 class="main-heading">Add a New Pipeline</h2>
+
+      <article class="fillable">
+        <section class="user-input">
+          <h3 class="section-heading">Part 1: Material</h3>
+          <span class="note"><span class="sym">*</span> denotes a required field</span>
+
+          <label class="field required">
+            <span class="field-name">Material Type</span> <select id="material-type">
+              <option>Git</option>
+              <option>Mercurial</option>
+              <option>Pipeline</option>
+            </select>
+          </label>
+          <div class="alt-repo">
+            <label class="field required">
+              <span class="field-name">Repository URL</span> <input type="url" placeholder="e.g., https://github.com/me/my-repo" name="url" required>
+            </label>
+            <div class="connection-test">
+              <button id="test-connection" class="btn">Test Connection</button>
+              <span id="connection-result"></span>
+            </div>
+            <details class="advanced">
+              <summary>Advanced Settings</summary>
+              <label class="field">
+                <span class="field-name">Branch</span> <input type="name" placeholder="master">
+              </label>
+              <label class="field">
+                <span class="field-name">Destination Directory</span> <input type="name" placeholder="/path/to/checkout">
+              </label>
+            </details>
+          </div>
+          <div class="alt-pipeline">
+            <label class="field required">
+              <span class="field-name">Upstream Pipeline Name</span> <input type="text" placeholder="e.g., upstream-pipeline" name="upstream-pipeline-name" required>
+            </label>
+            <label class="field required">
+              <span class="field-name">Upstream Pipeline Stage Name</span> <input type="text" placeholder="e.g., upstream-stage" name="upstream-stage-name" required>
+            </label>
+          </div>
+        </section>
+        <figure class="concept-diagram material">
+          <figcaption>A <strong>material</strong> triggers your pipeline to run. Typically this is a <strong>source repository</strong> or an <strong>upstream pipeline</strong>.</figcaption>
+        </figure>
+      </article>
+
+      <article class="fillable">
+        <section class="user-input">
+          <h3 class="section-heading">Part 2: Pipeline Name</h3>
+          <span class="note"><span class="sym">*</span> denotes a required field</span>
+
+          <label class="field required">
+            <span class="field-name">Pipeline Name</span> <input type="text" placeholder="e.g., My-New-Pipeline" name="pipeline-name" required>
+          </label>
+        </section>
+        <figure class="concept-diagram pipeline">
+          <figcaption>In GoCD, a <strong>pipeline</strong> is a representation of a <strong>workflow</strong>. Pipelines consist of one or more <strong>stages</strong>.</figcaption>
+        </figure>
+      </article>
+
+      <article class="fillable">
+        <section class="user-input">
+          <h3 class="section-heading">Part 3: Stage Details</h3>
+          <span class="note"><span class="sym">*</span> denotes a required field</span>
+
+          <label class="field required">
+            <span class="field-name">Stage Name</span> <input type="text" placeholder="e.g., Test-and-Report" name="pipeline-name" required>
+          </label>
+          <details class="advanced">
+            <summary>Advanced Settings</summary>
+            <div class="radio-set">
+              <span class="set-name">This stage runs:</span>
+              <label>
+                <input type="radio" name="stage-run-type" value="Automatically" checked>
+                Automatically
+              </label>
+              <label>
+                <input type="radio" name="stage-run-type" value="Manually">
+                Manually
+              </label>
+            </label>
+          </details>
+        </section>
+        <figure class="concept-diagram stage">
+          <figcaption>A <strong>stage</strong> is a group of jobs, and a <strong>job</strong> is a piece of work to execute.</figcaption>
+        </figure>
+      </article>
+
+      <article class="fillable">
+        <section class="user-input">
+          <h3 class="section-heading">Part 4: Job and Tasks</h3>
+          <span class="note"><span class="sym">*</span> denotes a required field</span>
+
+          <label class="field required">
+            <span class="field-name">Job Name</span> <input type="text" placeholder="e.g., run-unit-tests" name="pipeline-name" required>
+          </label>
+
+          <div class="terminal-control">
+            <h3>Write job tasks here at the prompt:</h3>
+            <code class="exec-editor">
+              <p class="usage hideable closed"># Note that this is <strong>not a real script,</strong> so things like logical operators, loops, conditionals, and shell pipes <strong>will not work.</strong> If you need such features, please wrap your command as a script, e.g., <code>bash -c "... your script here ..."</code> or <code>cmd /c call "... your script here ..."</code>.
+
+# Additionally, <strong>inlined environment variables won't work</strong> without wrapping the command in a shell call. It's better to set them in the <strong>environment variable section above</strong>.
+
+# Other available special commands:
+#  <code>fetch-artifact [pipeline] &lt;stage&gt; &lt;job&gt; &lt;filepattern&gt;</code></p>
+<p class="usage important">Press <strong>&lt;enter&gt;</strong> to save a command.
+Press <strong>&lt;shift-enter&gt;</strong> for a <strong>newline</strong> (don't end with <code>\</code>).</p>
+              <pre contenteditable="true" class="current-editor"></pre>
+            </code>
+          </div>
+
+          <details class="advanced">
+            <summary>Advanced Settings</summary>
+            <div class="field environment-vars">
+              <span class="field-name">Environment Variables</span>
+              <table class="key-val">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="text" name="env_key[]"/></td>
+                    <td><input type="text" name="env_val[]"/></td>
+                  </tr>
+                  <tr>
+                    <td><input type="text" name="env_key[]"/></td>
+                    <td><input type="text" name="env_val[]"/></td>
+                  </tr>
+                  <tr>
+                    <td><input type="text" name="env_key[]"/></td>
+                    <td><input type="text" name="env_val[]"/></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+
+        </section>
+        <figure class="concept-diagram job">
+          <figcaption>A <strong>job</strong> is like a script, where each sequential step is called a <strong>task</strong>. Typically, a task is a single command.</figcaption>
+        </figure>
+      </article>
+
+      <footer class="actions">
+        <a href="index.html" class="btn">Cancel</a>
+        <div class="save">
+          <span id="validation-msg"></span>
+          <a href="index.html" id="save-and-run" class="btn primary">Save + Run Pipeline</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <div id="messages"></div>
+</body>
+</html>

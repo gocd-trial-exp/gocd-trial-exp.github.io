@@ -1,0 +1,459 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#sandbox {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f4f8f9;
+  color: #333;
+  padding-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.root-header {
+  background: #000728;
+  height: 40px;
+  margin: 0;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.go-logo {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background: url(../img/gocd_logo.svg);
+}
+
+.menu {
+  vertical-align: top;
+  display: inline-block;
+  margin: 0;
+  margin-left: 50px;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  height: 20px;
+}
+.menu .menu-item {
+  margin: 0;
+  margin-right: 20px;
+  padding: 0;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 20px;
+}
+.menu .menu-item a {
+  color: #fff;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.menu .menu-item a:hover, .menu .menu-item a:active, .menu .menu-item a:focus {
+  opacity: 1;
+}
+
+.current-user {
+  color: #bbb;
+  line-height: 20px;
+  height: 20px;
+  float: right;
+}
+
+.main-heading {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+  font-weight: 300;
+  font-size: 24px;
+  text-indent: 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0 20px;
+  line-height: 35px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #333;
+}
+.btn.primary {
+  background-color: #943a9e;
+  color: #fff;
+}
+
+a.btn {
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+a.btn.primary {
+  border-color: #943a9e;
+}
+
+#messages {
+  position: fixed;
+  top: 40px;
+  right: 0;
+  width: 350px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-box-shadow: -3px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -3px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: -3px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-start;
+  color: #666;
+  -webkit-box-shadow: -3px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -3px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: -3px 3px 3px 0px rgba(0, 0, 0, 0.1);
+}
+#messages img {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+#messages span {
+  display: inline-block;
+  padding: 10px;
+}
+#messages:empty {
+  display: none;
+}
+#messages.anim-fast {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
+.anim-fast {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.connection-test {
+  margin-bottom: 30px;
+}
+
+#connection-result {
+  margin-left: 20px;
+}
+#connection-result .fatal, #connection-result .success {
+  margin-left: 1ex;
+}
+#connection-result .fatal {
+  color: #d00;
+}
+#connection-result .success {
+  color: #00c853;
+}
+
+.fillable, .actions {
+  background-color: #fff;
+  max-width: 1200px;
+  min-width: 1000px;
+  margin: 30px auto;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions .btn {
+  font-size: 16px;
+}
+.actions #validation-msg {
+  margin-right: 2ex;
+  color: #d00;
+}
+
+.fillable {
+  display: flex;
+  justify-content: space-between;
+}
+.fillable .note {
+  display: inline-block;
+  font-size: 12px;
+  margin: 5px 0 15px;
+}
+.fillable .note .sym {
+  color: #d00;
+}
+.fillable .section-heading {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+.fillable .concept-diagram {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+.fillable .concept-diagram figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 16px;
+  text-align: center;
+}
+.fillable .concept-diagram.material {
+  background-image: url(../img/gocd_1_material.svg);
+  width: 484px;
+  height: 315px;
+  background-position-x: -234px;
+  background-position-y: -35px;
+  background-repeat: no-repeat;
+  background-size: 196%;
+}
+.fillable .concept-diagram.pipeline {
+  background-image: url(../img/gocd_3_pipeline.svg);
+  width: 484px;
+  height: 147px;
+  background-repeat: no-repeat;
+  background-position-x: -80px;
+  background-position-y: -70px;
+  background-size: 137%;
+}
+.fillable .concept-diagram.stage {
+  background-image: url(../img/gocd_4_stage.svg);
+  width: 484px;
+  height: 265px;
+  background-repeat: no-repeat;
+  background-position-x: -316px;
+  background-size: 188%;
+  background-position-y: -48px;
+}
+.fillable .concept-diagram.job {
+  background-image: url(../img/gocd_5_job.svg);
+  width: 484px;
+  height: 308px;
+  background-repeat: no-repeat;
+  background-position-x: -287px;
+  background-size: 188%;
+  background-position-y: -30px;
+}
+.fillable .alt-pipeline {
+  display: none;
+}
+.fillable .field[data-type=Pipeline] ~ .alt-pipeline {
+  display: block;
+}
+.fillable .field[data-type=Pipeline] ~ .alt-repo {
+  display: none;
+}
+.fillable .advanced {
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+.fillable .advanced summary {
+  cursor: pointer;
+  outline: none;
+}
+.fillable .advanced[open] {
+  padding-bottom: 30px;
+}
+.fillable .advanced[open] summary {
+  margin-bottom: 15px;
+}
+.fillable .field,
+.fillable .field-name,
+.fillable .terminal-control {
+  margin-bottom: 30px;
+}
+.fillable .field {
+  display: block;
+}
+.fillable .field .field-name {
+  display: block;
+  margin-bottom: 10px;
+}
+.fillable .field:last-child {
+  margin-bottom: 0;
+}
+.fillable .required .field-name::after {
+  content: "*";
+  margin-left: 0.5ex;
+  color: #d00;
+}
+.fillable .user-input {
+  font-size: 16px;
+}
+.fillable .user-input input, .fillable .user-input select {
+  font-size: inherit;
+}
+.fillable .user-input input[type=text] {
+  padding: 5px;
+  width: 25vw;
+  max-width: 350px;
+}
+.fillable .user-input input[type=url] {
+  width: 35vw;
+  max-width: 500px;
+}
+.fillable .environment-vars .field-name {
+  font-weight: 700;
+  font-size: 16px;
+}
+.fillable .environment-vars th, .fillable .environment-vars td {
+  text-align: left;
+}
+.fillable .environment-vars .key-val input[type=text], .fillable .environment-vars .key-val input[type=password] {
+  width: 300px;
+}
+
+.exec-editor {
+  display: block;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #333640;
+  color: #fff;
+  font-family: Hack, monospace;
+  font-size: 14px;
+}
+.exec-editor * {
+  font-family: inherit;
+}
+.exec-editor .usage {
+  margin: 0 0 22px;
+  padding: 0;
+  color: #777;
+  white-space: pre-wrap;
+}
+.exec-editor .usage strong {
+  color: #aaa;
+}
+.exec-editor .usage code {
+  display: inline-block;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: #a88;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.exec-editor .hideable {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+.exec-editor .hideable::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "Double-click to hide help";
+  color: #bbb;
+  cursor: pointer;
+  text-align: right;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.exec-editor .hideable:hover::after {
+  color: #fff;
+}
+.exec-editor .hideable.closed {
+  height: 15px;
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.exec-editor .hideable.closed::after {
+  padding-top: 5px;
+  top: 0;
+  content: "Double-click to show help";
+  background: -moz-linear-gradient(top, rgba(51, 54, 64, 0.4) 0%, #333640 100%);
+  /* FF3.6+ */
+  background: -webkit-linear-gradient(top, rgba(51, 54, 64, 0.4) 0%, #333640 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -ms-linear-gradient(top, rgba(51, 54, 64, 0.4) 0%, #333640 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(51, 54, 64, 0.4) 0%, #333640 100%);
+  /* W3C */
+}
+.exec-editor .important {
+  color: #7bf;
+}
+.exec-editor .current-editor::before,
+.exec-editor .cmd::before {
+  content: "$";
+  margin-left: calc(-2ex + 2px);
+  margin-right: 4px;
+  color: #999;
+}
+.exec-editor .current-editor {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin: 0;
+  padding: 2px;
+  padding-left: calc(2ex + 2px);
+}
+.exec-editor .current-editor:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.exec-editor .current-editor:focus::before {
+  color: #aadadb;
+}
+.exec-editor .task {
+  cursor: pointer;
+  padding: 2px;
+  padding-left: calc(2ex + 2px);
+  margin: 0;
+  margin-bottom: 2px;
+}
+.exec-editor .task .cmd,
+.exec-editor .task .args {
+  padding: 0;
+  margin: 0;
+}
+.exec-editor .task .cmd {
+  color: #aadbaa;
+}
+.exec-editor .task .args {
+  margin-left: 1ex;
+  color: #fff;
+}
+
+/*# sourceMappingURL=add-pipeline.css.map */
